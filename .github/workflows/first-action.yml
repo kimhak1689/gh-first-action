@@ -8,7 +8,7 @@ jobs:
   mock-unit-test:
     name: Mock Unit Test
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' 
     steps:
       - name: Print Greeting
         run: echo "Hello World!"
