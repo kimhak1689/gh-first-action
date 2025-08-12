@@ -6,7 +6,7 @@ on:
       - main
       - release/uat
     paths-ignore:
-      - '.github/**'
+      - '.github/**'   
 
 jobs:
   test:
