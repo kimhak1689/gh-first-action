@@ -2,7 +2,8 @@ name: Test PR Workflow
 
 on:
   pull_request:
-
+      paths-ignore:
+        - '.github/**'
 jobs:
   mock-unit-test:
     name: Mock Unit Test
