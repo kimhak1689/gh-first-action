@@ -6,16 +6,27 @@ on:
 
 jobs:
   mock-unit-test:
-    name: Mock Unit Test
+    # name: Mock Unit Test
+    # runs-on: ubuntu-latest
+    # if: github.event_name == 'pull_request'
+    # steps:
+    #   - name: Print Greeting
+    #     run: echo "Hello World!"
+    #   - name: Run Fake Unit Test
+    #     run: echo "Running mock unit tests... All tests passed!"
+    #   - name: Print Good Night
+    #     run: echo "Goodnight"
+    name: Mock Unit Test (Fail)
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - name: Print Greeting
         run: echo "Hello World!"
-      - name: Run Fake Unit Test
-        run: echo "Running mock unit tests... All tests passed!"
-      - name: Print Good Night
-        run: echo "Goodnight"
+      - name: Simulate Failing Test
+        run: |
+          echo "Simulating a unit test failure..."
+          exit 1  # This will cause the job to fail
+      - name: This step will not run
+        run: echo "This will not print"
 
   build:
     name: Mock Build
