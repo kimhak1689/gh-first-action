@@ -5,17 +5,17 @@ on:
   pull_request:
 
 jobs:
-  mock-unit-test:
-    name: Mock Unit Test
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-      - name: Print Greeting
-        run: echo "Hello World!"
-      - name: Run Fake Unit Test
-        run: echo "Running mock unit tests... All tests passed!"
-      - name: Print Good Night
-        run: echo "Goodnight"
+  # mock-unit-test:
+  #   name: Mock Unit Test
+  #   runs-on: ubuntu-latest
+  #   if: github.event_name == 'pull_request'
+  #   steps:
+  #     - name: Print Greeting
+  #       run: echo "Hello World!"
+  #     - name: Run Fake Unit Test
+  #       run: echo "Running mock unit tests... All tests passed!"
+  #     - name: Print Good Night
+  #       run: echo "Goodnight"
 
   build:
     name: Mock Build
