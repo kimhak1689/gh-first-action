@@ -20,16 +20,16 @@ jobs:
   build:
     name: Mock Build
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
+    if: ${{ inputs.build_tag == 'latest' }}
     steps:
       - name: Build Step
         run: echo "Building the project..."
 
   deploy:
     name: Mock Deploy
+    if: ${{ !failure() && !cancelled() }}
     runs-on: ubuntu-latest
     needs: build
-    if: github.event_name == 'workflow_dispatch'
     steps:
       - name: Deploy Step
         run: echo "Deploying the project..."
