@@ -12,7 +12,7 @@ jobs:
   test:
     name: Run Unit Test
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && !contains(join(github.event.pull_request.changed_files.*), '.github/')
     steps:
       - name: Print Greeting
         run: echo "Hello World!"
